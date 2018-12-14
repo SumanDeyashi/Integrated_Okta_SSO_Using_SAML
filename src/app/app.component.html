@@ -1,0 +1,23 @@
+<link
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.13.0/css/okta-sign-in.min.css"
+  type="text/css"
+  rel="stylesheet"/>
+<link
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.13.0/css/okta-theme.css"
+  type="text/css"
+  rel="stylesheet"/>
+
+<button class="btn" routerLink="/"> Home </button>&nbsp;&nbsp;
+<button class="btn" *ngIf="!isAuthenticated" routerLink="/login"> Login </button>&nbsp;&nbsp;
+<button class="btn"  *ngIf="isAuthenticated" (click)="logout()"> Logout </button>&nbsp;&nbsp;
+<button class="btn" routerLink="/protected" style="display:none"> Protected </button>
+<br><br><br><br><br>
+<div *ngIf="!isAuthenticated" class="welcome">
+ Connecting With Okta SSO SAML Server...
+</div>
+<br><br>
+<router-outlet></router-outlet>
+<div *ngIf="isAuthenticated" class="welcome">
+  Successfully Logged In !!!<br><br>
+  Welcome To Your Profile !!!
+</div>
