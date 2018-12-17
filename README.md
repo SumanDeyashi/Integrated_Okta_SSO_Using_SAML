@@ -10,3 +10,7 @@ Technology Used: HTML/HTML5, CSS/CSS3, Angular7, Okta SSO, SAML Server.
 
 Duration: Nov, 2018 to Dec, 2018.
 
+# Procedure:
+
+First thing you have to do create an account on https://developer.okta.com . Now create one identity management application(SSO) on okta application section, while creating this have ensure couple of thing like application name, base url, login redirect url(which is call back) and after creating it you will get that own "Client ID". Now, open Visual Studio Code and create your angular application using "ng new 'project name'" command.  
+
