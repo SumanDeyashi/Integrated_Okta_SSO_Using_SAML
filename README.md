@@ -12,5 +12,17 @@ Duration: Nov, 2018 to Dec, 2018.
 
 # Procedure:
 
-First thing you have to do create an account on https://developer.okta.com . Now create one identity management application(SSO) on okta application section, while creating this have ensure couple of thing like application name, base url, login redirect url(which is call back) and after creating it you will get that own "Client ID". Now, open Visual Studio Code and create your angular application using "ng new 'project name'" command.  
+First thing you have to do create an account on https://developer.okta.com . Now create one identity management application(SSO) on okta application section, while creating this have ensure couple of thing like application name, base url, Login redirect url(http://localhost:4200/callback), Logout redirect url(http://localhost:4200/login) and after creating it you will get that own "Client ID". 
+
+Now, open Visual Studio Code and create your angular application using "ng new 'project name'" command. then, we need to install signin-widget using "npm install @okta/okta-signin-widget --save" command and install okta dependency using "npm install @okta/okta-angular --save" command.
+
+After that, Some routes require authentication in order to render. Defining these protected routes is easy with the OktaAuthGuard from @okta/okta-angular. This route will only be visible to users with a valid accessToken or idToken. When a user attempts to access a route that is protected by OktaAuthGuard, it first checks to see if the user has been authenticated. If isAuthenticated() returns false, start the login flow. Inside the html component create Home, Login, Logout button with onclick function.
+
+/login
+This route hosts the Sign-In Widget and redirects if the user is already logged in. If the user is coming from a protected page, they’ll be redirected back to the page upon login. Create a new component "src/app/login.component.ts" and on that file have to put base url.
+
+Update src/app/app.module.ts to include your project components and routes. Here ensure couple of things like  issuer:'https://{yourOktaDomain}/oauth2/default', redirectUri: 'http://localhost:4200/implicit/callback', clientId: '{clientId}'
+ 
+ Finally, start the application using "ng serve" command.
+
 
