@@ -12,7 +12,7 @@ Duration: Nov, 2018 to Dec, 2018.
 
 # Procedure:
 
-First thing you have to do create an account on https://developer.okta.com . Now create one identity management application(SSO) on okta application section, while creating this have ensure couple of thing like application name, base url, Login redirect url(http://localhost:4200/callback), Logout redirect url(http://localhost:4200/login) and after creating it you will get that own "Client ID". 
+First thing you have to do create an account on https://developer.okta.com . Now create one identity management application(SSO) on okta application section, while creating this have ensure couple of thing like application name, base url, Login redirect url (http://localhost:4200/callback), Logout redirect url (http://localhost:4200/login) and after creating it you will get that own "Client ID". 
 
 Now, open Visual Studio Code and create your angular application using "ng new 'project name'" command. then, we need to install signin-widget using "npm install @okta/okta-signin-widget --save" command and install okta dependency using "npm install @okta/okta-angular --save" command.
 
@@ -23,7 +23,8 @@ This route hosts the Sign-In Widget and redirects if the user is already logged 
 
 The OktaAuthModule handles different authentication flows for your application, so it requires your OpenID Connect configuration. By default okta/okta-angular redirects to the Okta Sign-In Page when the user is not authenticated. We override this behavior by passing an onAuthRequired function to the OktaAuthGuard. 
 
-Update src/app/app.module.ts to include your project components and routes. Here ensure couple of things like  issuer:'https://{yourOktaDomain}/oauth2/default', redirectUri: 'http://localhost:4200/implicit/callback', clientId: '{clientId}'
+Update src/app/app.module.ts to include your project components and routes. Here ensure couple of things like  issuer: 
+"https://{yourOktaDomain}/oauth2/default", redirectUrl: "http://localhost:4200/implicit/callback", clientId: "{clientId}"
  
  Finally, start the application using "ng serve" command.
 
