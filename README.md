@@ -27,6 +27,3 @@ Update src/app/app.module.ts to include your project components and routes. Here
 "https://{yourOktaDomain}/oauth2/default", redirectUrl: "http://localhost:4200/implicit/callback", clientId: "{clientId}"
  
  Finally, start the application using "ng serve" command.
- 
- aaa
-
